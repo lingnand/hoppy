@@ -24,7 +24,7 @@
 set -euo pipefail
 
 # Go to this file's directory.
-myDir=$(readlink -f "$0")
+myDir=$(greadlink -f "$0")
 myDir=$(dirname "$myDir")
 cd "$myDir"
 

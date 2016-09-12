@@ -35,7 +35,7 @@ EOF
     fi
 fi
 
-projectDir=$(readlink -f "$0")
+projectDir=$(greadlink -f "$0")
 projectDir=$(dirname "$projectDir")
 set -x
 
