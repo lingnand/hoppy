@@ -19,8 +19,8 @@ CXXFLAGS += -std=c++11 -fPIC
 
 .PHONY: clean
 
-libhoppy-tests-basic.so: basic.o constants.o functions.o ptrctr.o undeletable.o
+libhoppy-tests-basic.so: constants.o ptrctr.o undeletable.o
 	$(CXX) -shared $^ -o $@
 
 clean:
-	-rm basic.cpp basic.hpp *.o *.so
+	-rm *.o *.so

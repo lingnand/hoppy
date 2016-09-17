@@ -17,9 +17,18 @@ library
   build-depends:
       base >=4.7 && <4.9
     , hoppy-runtime
+    , containers
+  exposed-modules:
+      Foreign.Hoppy.Test.Basic
+      Foreign.Hoppy.Test.Basic.HsBox
+  c-sources: cbits/basic.cpp cbits/functions.cpp
+  include-dirs: cbits /Users/lingnan/builds/hoppy/tests/basic/cpp
+  extra-lib-dirs: /Users/lingnan/builds/hoppy/tests/basic/cpp
+  extra-libraries: hoppy-tests-basic-cpp stdc++ c++
+  cc-options: -std=c++11 -stdlib=libc++
+  -- ld-options: -L/Users/lingnan/builds/hoppy/tests/basic/cpp -l:libhoppy-tests-basic.so
   default-language: Haskell2010
   ghc-options: -W -fwarn-incomplete-patterns -fwarn-unused-do-bind
-  extra-libraries: hoppy-tests-basic
 
 test-suite tests-basic
   type: exitcode-stdio-1.0
